@@ -15,9 +15,16 @@ datasource db {
 
 model Meal {
   id String @id @default(auto()) @map("_id") @db.ObjectId
-  mealType String
+  mealType MealType
   description String
-  poopType String
-  quantity String
-  when String
+  poopType String?
+  quantity String?
+  when String?
+}
+
+enum MealType {
+  BREAKFAST
+  LUNCH
+  DINNER
+  SNACK
 }
